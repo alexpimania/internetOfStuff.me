@@ -78,22 +78,6 @@
         document.getElementById("textfield").value = "";
       }
     }
-
-  </script>
-  <p>Type the recipient's e-mail in this field:</p>
-  <input type="text" id="email">
-  <p>Type the Carbon Copy recipients:</p>
-  <input type="text" id="cc">
-  <p>Type the Blind Carbon Copy recipients:</p>
-  <input type="text" id="bcc">
-  <p>Type the subject of the email:</p>
-  <input type="text" id="subject">
-  <p>Type the contents of the email:</p>
-  <textarea rows="5" cols="100" id="body"></textarea>
-  <button id="thebutton" onclick="makeLink()">Click here to generate mailto:</button> <a href="" id="link">Email Link</a>
-  <p>Generated Link:</p>
-  <input id="result" type="text" readonly="true">
-  <script>
     function makeLink() {
       var email = document.getElementById("email").value;
       var cc = document.getElementById("cc").value;
@@ -112,4 +96,22 @@
     }
 
   </script>
+  <p>Type the recipient's e-mail in this field:</p>
+  <input type="text" id="email">
+  <p>Type the Carbon Copy recipients:</p>
+  <input type="text" id="cc">
+  <p>Type the Blind Carbon Copy recipients:</p>
+  <input type="text" id="bcc">
+  <p>Type the subject of the email:</p>
+  <input type="text" id="subject">
+  <p>Type the contents of the email:</p>
+  <textarea style="width: 100%; height: 40%;" id="body"></textarea>
+  <button id="thebutton" onclick="makeLink()">Click here to generate mailto:</button> <a href="" id="link">Email Link</a>
+  <p>Generated Link:</p>
+  <input id="result" type="text" readonly="true">
+  <br><br>
+  <p>If you would like to be appear in this twitter feed, tweet with #internetofstuff</p>
+  <img src="http://220.244.56.8:90/feed.jpeg" style="width:80%; height: 40%;">
 </body>
+
+

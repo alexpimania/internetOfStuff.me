@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <head>
@@ -43,9 +44,11 @@
       border: 1px solid blue;
       box-shadow: 0 0 10px blue;
       display: block;
-      min-width: 20%;
+      width: 100%;
+      height: 40%;
       margin: auto;
       background-color: #000000;
+      
     }
     
     #thebutton:hover {
@@ -60,7 +63,10 @@
     #thebutton {
       background-color: blue;
     }
-
+    #feed {
+    width: 70%; 
+    height: 40%;
+    }
   </style>
 </head>
 
@@ -69,18 +75,7 @@
   <h4 id="myh4">
     This website is entirely based around the concept that has been acronymized as IoT but taking into account all of the other websites that are still on the internet that don't get a mention!
   </h4>
-  <img style="width: 0px; height: 0px; display: none" id="imageiscool" src="localhost:9999/index/info=">
-  <h4>If you have any suggestions or find any bugs type them down into this text field and when you end the sentence it will automatically send. :)</h4>
-  <textarea rows="5" cols="100" onkeyup="myFunction()" id="textfield" style="width: 100%; height: 40%" autofocus></textarea>
   <script>
-    function myFunction() {
-      var variablething = document.getElementById("textfield").value;
-      if (variablething.slice(-1) == "!" || variablething.slice(-1) == "." || variablething.slice(-1) == "?") {
-        document.getElementById("imageiscool").src = "http://220.244.56.8:9999/index/?info=" + variablething;
-        document.getElementById("textfield").value = "";
-      }
-    }
-
     function makeLink() {
       var email = document.getElementById("email").value;
       var cc = document.getElementById("cc").value;
@@ -90,8 +85,6 @@
       var link = "mailto:" + email + "?CC=" + cc + "&BCC=" + bcc + "&subject=" + subject + "&body=" + body;
       document.getElementById("link").href = link;
       document.getElementById("result").value = link;
-      var sendlink = "email^" + email + "^^cc^" + cc + "^^bcc^" + bcc + "^^subject^" + subject + "^^body^" + body;
-      document.getElementById("imageiscool").src = "http://220.244.56.8:9999/email/?info=" + sendlink;
       var boxlist = ["email", "cc", "bcc", "subject", "body"];
       for (var i = 0; i < boxlist.length; i++) {
         document.getElementById(boxlist[i]).value = "";
@@ -99,14 +92,11 @@
     }
   window.onload = function() {
     var image = document.getElementById("feed");
-
     function updateImage() {
         image.src = image.src.split("?")[0] + "?" + new Date().getTime();
     }
-
     setInterval(updateImage, 1000);
 }
-
   </script>
   <p>Type the recipient's e-mail in this field:</p>
   <input type="text" id="email">
@@ -117,12 +107,12 @@
   <p>Type the subject of the email:</p>
   <input type="text" id="subject">
   <p>Type the contents of the email:</p>
-  <textarea style="width: 100%; height: 40%;" id="body"></textarea>
+  <textarea id="body"></textarea>
   <button id="thebutton" onclick="makeLink()">Click here to generate mailto:</button> <a href="" id="link">Email Link</a>
   <p>Generated Link:</p>
   <input id="result" type="text" readonly="true">
   <br>
   <br>
   <p>If you would like to be appear in this twitter feed, tweet with #internetofstuff</p>
-  <img id="feed" src="http://220.244.56.8:90/feed.jpeg" style="width:80%; height: 40%;">
+  <img id="feed" src="http://220.244.56.8:90/feed.jpeg">
 </body>

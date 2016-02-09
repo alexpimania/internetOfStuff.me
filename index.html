@@ -11,6 +11,7 @@
       text-transform: uppercase;
       background-color: #000000;
     }
+    
     #myh2 {
       font-family: Tahoma;
       color: #FFDC03;
@@ -19,6 +20,7 @@
       text-transform: uppercase;
       background-color: #000000;
     }
+    
     * {
       font-family: Tahoma;
       color: #00FF00;
@@ -78,6 +80,7 @@
         document.getElementById("textfield").value = "";
       }
     }
+
     function makeLink() {
       var email = document.getElementById("email").value;
       var cc = document.getElementById("cc").value;
@@ -94,6 +97,14 @@
         document.getElementById(boxlist[i]).value = "";
       }
     }
+    setInterval(function() {
+      if (document.getElementById("feed").src = "http://220.244.56.8:90/feed.jpeg?test=1") {
+        document.getElementById("feed").src = "http://220.244.56.8:90/feed.jpeg?test=2"
+      }
+      if (document.getElementById("feed").src = "http://220.244.56.8:90/feed.jpeg?test=2") {
+        document.getElementById("feed").src = "http://220.244.56.8:90/feed.jpeg?test=1"
+      }
+    }, 3000);
 
   </script>
   <p>Type the recipient's e-mail in this field:</p>
@@ -109,9 +120,8 @@
   <button id="thebutton" onclick="makeLink()">Click here to generate mailto:</button> <a href="" id="link">Email Link</a>
   <p>Generated Link:</p>
   <input id="result" type="text" readonly="true">
-  <br><br>
+  <br>
+  <br>
   <p>If you would like to be appear in this twitter feed, tweet with #internetofstuff</p>
-  <img src="http://220.244.56.8:90/feed.jpeg" style="width:80%; height: 40%;">
+  <img id="feed" src="http://220.244.56.8:90/feed.jpeg?test=2" style="width:80%; height: 40%;">
 </body>
-
-

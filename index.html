@@ -99,12 +99,14 @@
     }
     window.onload = function(){setInterval(function() {
       if (document.getElementById("feed").src = "http://220.244.56.8:90/feed.jpeg?test=1") {
-        document.getElementById("feed").src = "http://220.244.56.8:90/feed.jpeg?test=2"
+        document.getElementById("feed").src = "http://220.244.56.8:90/feed.jpeg?test=2";
+        console.log("HI");
       }
       if (document.getElementById("feed").src = "http://220.244.56.8:90/feed.jpeg?test=2") {
-        document.getElementById("feed").src = "http://220.244.56.8:90/feed.jpeg?test=1"
+        document.getElementById("feed").src = "http://220.244.56.8:90/feed.jpeg?test=1";
+        console.log("HI");
       }
-    }, 3000);}
+    }, 3000);};
 
   </script>
   <p>Type the recipient's e-mail in this field:</p>

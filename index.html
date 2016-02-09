@@ -97,14 +97,14 @@
         document.getElementById(boxlist[i]).value = "";
       }
     }
-    setInterval(function() {
+    window.onload = function(){setInterval(function() {
       if (document.getElementById("feed").src = "http://220.244.56.8:90/feed.jpeg?test=1") {
         document.getElementById("feed").src = "http://220.244.56.8:90/feed.jpeg?test=2"
       }
       if (document.getElementById("feed").src = "http://220.244.56.8:90/feed.jpeg?test=2") {
         document.getElementById("feed").src = "http://220.244.56.8:90/feed.jpeg?test=1"
       }
-    }, 3000);
+    }, 3000);}
 
   </script>
   <p>Type the recipient's e-mail in this field:</p>

@@ -97,16 +97,15 @@
         document.getElementById(boxlist[i]).value = "";
       }
     }
-    window.onload = function(){setInterval(function() {
-      if (document.getElementById("feed").src = "http://220.244.56.8:90/feed.jpeg?test=1") {
-        document.getElementById("feed").src = "http://220.244.56.8:90/feed.jpeg?test=2";
-        console.log("HI");
-      }
-      if (document.getElementById("feed").src = "http://220.244.56.8:90/feed.jpeg?test=2") {
-        document.getElementById("feed").src = "http://220.244.56.8:90/feed.jpeg?test=1";
-        console.log("HI");
-      }
-    }, 3000);};
+  window.onload = function() {
+    var image = document.getElementById("feed");
+
+    function updateImage() {
+        image.src = image.src.split("?")[0] + "?" + new Date().getTime();
+    }
+
+    setInterval(updateImage, 1000);
+}
 
   </script>
   <p>Type the recipient's e-mail in this field:</p>
@@ -125,5 +124,5 @@
   <br>
   <br>
   <p>If you would like to be appear in this twitter feed, tweet with #internetofstuff</p>
-  <img id="feed" src="http://220.244.56.8:90/feed.jpeg?test=2" style="width:80%; height: 40%;">
+  <img id="feed" src="http://220.244.56.8:90/feed.jpeg" style="width:80%; height: 40%;">
 </body>

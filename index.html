@@ -75,10 +75,6 @@
 <body>
     <script>
     function makeLink() {
-      linkHTML1 = `<div>
-      <a style="display: inline;" href="`
-      linkHTML2 = `"><img style="display: inline; height: auto; width: 4%;" src="http://www.clker.com/cliparts/N/x/q/m/s/7/free-email-icon-hi.png"></a>
-      </div>`
       var email = document.getElementById("email").value;
       var cc = document.getElementById("cc").value;
       var bcc = document.getElementById("bcc").value;
@@ -86,7 +82,7 @@
       var body = document.getElementById("body").value;
       var link = "mailto:" + email + "?CC=" + cc + "&BCC=" + bcc + "&subject=" + subject + "&body=" + body;
       document.getElementById("link").href = link;
-      document.getElementById("result").value = linkHTML1 + link + linkHTML2;
+      document.getElementById("result").value = document.getElementById("link");
       var boxlist = ["email", "cc", "bcc", "subject", "body"];
       for (var i = 0; i < boxlist.length; i++) {
         document.getElementById(boxlist[i]).value = "";
@@ -121,9 +117,9 @@
   <p>Type the contents of the email:</p>
   <textarea id="body"></textarea>
   <button id="thebutton" onclick="makeLink()">Click here to generate mailto:</button> 
-  <div>
-<a style="display: inline;" id="link" href="javascript:void(0)"><img style="display: inline; height: auto; width: 4%;" src="http://www.clker.com/cliparts/N/x/q/m/s/7/free-email-icon-hi.png"></a>
-</div>
-  <p>Generated Link:</p>
+  <a style="display: inline;" id="link" href="javascript:void(0)">
+  <img style="display: inline; height: auto; width: 4%;" src="http://www.clker.com/cliparts/N/x/q/m/s/7/free-email-icon-hi.png">
+  </a>
+  <p>Generated HTML:</p>
   <input id="result" type="text" readonly="true">
 </body>

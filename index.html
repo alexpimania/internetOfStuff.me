@@ -84,7 +84,7 @@
       document.getElementById("link").href = link;
       var target = document.getElementById('link');
       var wrap = document.createElement('div');
-      wrap.appendChild(target.cloneNode(true));
+      wrap.appendChild(target);
       document.getElementById("result").value = document.getElementById("wrap").innerHTML;
       var boxlist = ["email", "cc", "bcc", "subject", "body"];
       for (var i = 0; i < boxlist.length; i++) {

@@ -97,6 +97,7 @@ linkHTML2 = `mailto:alexpimani@gmail.com"><img style="display: inline; height: a
     function updateImage() {
         image.src = image.src.split("?")[0] + "?" + new Date().getTime();
     }
+    updateImage();
     setInterval(updateImage, 30000);
   }
   </script>

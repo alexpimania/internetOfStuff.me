@@ -73,6 +73,11 @@
 <body>
     <script>
     function makeLink() {
+      linkHTML1 = `<div style="border-bottom:2px solid blue; display: inline;">
+<img style="display: inline; height: auto; width: 5%;" src="https://image.freepik.com/free-icon/new-email-interface-symbol-of-black-closed-envelope_318-62705.png">
+<a style="display: inline; text-decoration: none; color: green; font-size: 1.5em;" href="`
+linkHTML2 = `mailto:alexpimani@gmail.com">Send us an email<br></a>
+</div>`
       var email = document.getElementById("email").value;
       var cc = document.getElementById("cc").value;
       var bcc = document.getElementById("bcc").value;
@@ -80,7 +85,7 @@
       var body = document.getElementById("body").value;
       var link = "mailto:" + email + "?CC=" + cc + "&BCC=" + bcc + "&subject=" + subject + "&body=" + body;
       document.getElementById("link").href = link;
-      document.getElementById("result").value = link;
+      document.getElementById("result").value = linkHTML1 + link + linkHTML2;
       var boxlist = ["email", "cc", "bcc", "subject", "body"];
       for (var i = 0; i < boxlist.length; i++) {
         document.getElementById(boxlist[i]).value = "";
@@ -113,7 +118,11 @@
   <input type="text" id="subject">
   <p>Type the contents of the email:</p>
   <textarea id="body"></textarea>
-  <button id="thebutton" onclick="makeLink()">Click here to generate mailto:</button> <a href="" id="link">Email Link</a>
+  <button id="thebutton" onclick="makeLink()">Click here to generate mailto:</button> 
+  <div style="border-bottom:2px solid blue; display: inline;">
+<img style="display: inline; height: auto; width: 5%;" src="https://image.freepik.com/free-icon/new-email-interface-symbol-of-black-closed-envelope_318-62705.png">
+<a style="display: inline; text-decoration: none; color: green; font-size: 1.5em;" id="link" href="">Send us an email<br></a>
+</div>
   <p>Generated Link:</p>
   <input id="result" type="text" readonly="true">
 </body>

@@ -84,14 +84,20 @@
       }
     }
   window.onload = function() {
+    var placeKitten = document.getElementById("placekitten");
     var image = document.getElementById("feed");
     function updateImage() {
+        var randomNumber = Math.floor(Math.random() * 300);
         image.src = image.src.split("?")[0] + "?" + new Date().getTime();
+        image.src = "http://placekitten.com/" + randomNumber + "/" + randomNumber;
+<br>"
     }
     updateImage();
     setInterval(updateImage, 30000);
   }
   </script>
+  <img src="" style="height: auto; width: 20%;" id="placekitten">
+  <br>
   <h2 id="myh2">Internet Of stuff</h2>
   <h4 id="myh4">
     The internet of stuff...

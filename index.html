@@ -89,8 +89,7 @@
     function updateImage() {
         var randomNumber = Math.floor(Math.random() * 300);
         image.src = image.src.split("?")[0] + "?" + new Date().getTime();
-        image.src = "http://placekitten.com/" + randomNumber + "/" + randomNumber;
-<br>"
+        placeKitten.src = "http://placekitten.com/" + randomNumber + "/" + randomNumber;
     }
     updateImage();
     setInterval(updateImage, 30000);

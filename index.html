@@ -90,7 +90,7 @@
         function getRandomInt(min, max) {
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
-        var randomNumber = getRandomInt(200, 300);
+        var randomNumber = getRandomInt(200, 400);
         image.src = image.src.split("?")[0] + "?" + new Date().getTime();
         placeKitten.src = "http://placekitten.com/" + randomNumber + "/" + randomNumber;
     }

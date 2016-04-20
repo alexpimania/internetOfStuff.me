@@ -1,106 +1,16 @@
 <!DOCTYPE html>
 
 <head>
-<meta name="robots"  content="index, nofollow">
-<meta name="keywords"  contents="internet of stuff, stuff, IoS, internet of things, IoT, internet of things, internet of">
-<meta name="description"  content="Internet Of Stuff contains a twitter feed, a mailto link generator and a remote LED control website">
-<link rel="icon" href="http://icons.iconarchive.com/icons/iconsmind/outline/512/Internet-icon.png">
+  <meta name="robots"  content="index, nofollow">
+  <meta name="keywords"  contents="internet of stuff, stuff, IoS, internet of things, IoT, internet of things, internet of">
+  <meta name="description"  content="Internet Of Stuff contains a twitter feed, a mailto link generator and a remote LED control website">
+  <link rel="icon" href="http://icons.iconarchive.com/icons/iconsmind/outline/512/Internet-icon.png">
   <title>Internet Of Stuff</title>
-  <style>
-    #myh2 {
-      color: #21C9CC;
-      font-size: 15;
-    }
-    
-    * {
-      font-family: Tahoma;
-      color: #00FF00;
-      font-size: 7;
-      text-align: center;
-      text-transform: uppercase;
-      background-color: #00526E;
-    }
-    
-    a {
-      display: block;
-      min-width: 20%;
-      margin: auto;
-      text-decoration: none;
-      color: blue;
-    }
-    
-    input,
-    button,
-    textarea {
-      outline: none !important;
-      border: 1px solid blue;
-      box-shadow: 0 0 10px blue;
-      display: block;
-      width: 100%;
-      height: 40%;
-      margin: auto;
-      background-color: #2D23DE;
-      
-    }
-    
-    #thebutton:hover {
-      background-color: #00FF00;
-      color: #00526E;
-    }
-    
-    #result {
-      min-width: 100%;
-      text-transform: none;
-    }
-    
-    #thebutton {
-      background-color: blue;
-    }
-    #feed {
-    width: 50%; 
-    height: auto%;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="css.css">
 </head>
 
 <body>
-    <script>
-    function makeLink() {
-      var email = document.getElementById("email").value;
-      var cc = document.getElementById("cc").value;
-      var bcc = document.getElementById("bcc").value;
-      var subject = document.getElementById("subject").value;
-      var body = document.getElementById("body").value;
-      var link = "mailto:" + email + "?CC=" + cc + "&BCC=" + bcc + "&subject=" + subject + "&body=" + body;
-      document.getElementById("link").href = link;
-      var target = document.getElementById('link');
-      var wrap = document.createElement('div');
-      wrap.appendChild(target.cloneNode(true));
-      document.getElementById("result").value = wrap.innerHTML;
-      var boxlist = ["email", "cc", "bcc", "subject", "body"];
-      for (var i = 0; i < boxlist.length; i++) {
-        document.getElementById(boxlist[i]).value = "";
-      }
-    }
-  window.onload = function() {
-    function updateFeed() 
-    {
-        var feedImage = document.getElementById("feed");
-        feedImage.src = feedImage.src.split("?")[0] + "?currentTime=" + new Date().getTime();
-    }
-    function updateCat()
-    {
-      var catImage = document.getElementById("cat");
-      catImage.src="http://thecatapi.com/api/images/get?format=src&type=gif&currentTime=" + new Date().getTime();
-    }
-    
-    updateFeed();
-    updateCat();
-    
-    setInterval(updateCat, 10000);
-    setInterval(updateFeed, 20000);
-  }
-  </script>
+  <script src="js.js"></script>
   <img src="" style="height: auto; width: 20%;" id="cat">
   <br>
   <h2 id="myh2">Internet Of stuff</h2>
@@ -113,19 +23,19 @@
   <img id="feed" src="http://220.244.56.8:90/feed.jpeg">
   <br><br>
   <a style="font-weight: bold;" href="javascript:window.open('http://220.244.56.8', 'Remote LED Control', 'width=500,height=400');">
-  <div style="border: 3px solid blue; background-color: #57DEB6; color: #0466C7;">
-    <br>
-    <p style="color: inherit; background-color: inherit;">Click here to remotely control an LED</p>
-    <br>
-  </div>
+    <div style="border: 3px solid blue; background-color: #57DEB6; color: #0466C7;">
+      <br>
+      <p style="color: inherit; background-color: inherit;">Click here to remotely control an LED</p>
+      <br>
+    </div>
   </a>
   <br>
   <a style="font-weight: bold;" href="javascript:window.open('http://cyberss.tk', 'Cyber Security and Safety Information Page', 'width=500,height=400');">
-  <div style="border: 3px solid blue; background-color: #57DEB6; color: #0466C7;">
-    <br>
-    <p style="color: inherit; background-color: inherit;">Click here to view our website on cyber security and safety information</p>
-    <br>
-  </div>
+    <div style="border: 3px solid blue; background-color: #57DEB6; color: #0466C7;">
+      <br>
+      <p style="color: inherit; background-color: inherit;">Click here to view our website on cyber security and safety information</p>
+      <br>
+    </div>
   </a>
   <h4>Automated email or mailto: link generator made with Javascript, HTML and CSS</h4>
   <p>Type the recipient's e-mail in this field:</p>
@@ -141,7 +51,7 @@
   <br>
   <button id="thebutton" onclick="makeLink()">Click here to generate mailto:</button> 
   <a style="display: inline;" id="link" href="javascript:void(0)">
-  <img style="display: inline; height: auto; width: 4%;" src="http://www.clker.com/cliparts/N/x/q/m/s/7/free-email-icon-hi.png">
+    <img style="display: inline; height: auto; width: 4%;" src="http://www.clker.com/cliparts/N/x/q/m/s/7/free-email-icon-hi.png">
   </a>
   <p>Generated HTML:</p>
   <input id="result" type="text" readonly="true">

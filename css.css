@@ -1,1 +1,53 @@
-
+    #myh2 {
+      color: #21C9CC;
+      font-size: 15;
+    }
+    
+    * {
+      font-family: Tahoma;
+      color: #00FF00;
+      font-size: 7;
+      text-align: center;
+      text-transform: uppercase;
+      background-color: #00526E;
+    }
+    
+    a {
+      display: block;
+      min-width: 20%;
+      margin: auto;
+      text-decoration: none;
+      color: blue;
+    }
+    
+    input,
+    button,
+    textarea {
+      outline: none !important;
+      border: 1px solid blue;
+      box-shadow: 0 0 10px blue;
+      display: block;
+      width: 100%;
+      height: 40%;
+      margin: auto;
+      background-color: #2D23DE;
+      
+    }
+    
+    #thebutton:hover {
+      background-color: #00FF00;
+      color: #00526E;
+    }
+    
+    #result {
+      min-width: 100%;
+      text-transform: none;
+    }
+    
+    #thebutton {
+      background-color: blue;
+    }
+    #feed {
+    width: 50%; 
+    height: auto%;
+    }

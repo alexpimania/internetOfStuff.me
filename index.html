@@ -86,7 +86,7 @@
     function updateFeed() 
     {
         var feedImage = document.getElementById("feed");
-        feedImage.src = feedImage.src.split("?")[0] + "?" + new Date().getTime();
+        feedImage.src = feedImage.src.split("?")[0] + "?currentTime=" + new Date().getTime();
     }
     function updateCat()
     {
@@ -98,7 +98,7 @@
     updateCat();
     
     setInterval(updateCat, 10000);
-    setInterval(updateFeed, 15000);
+    setInterval(updateFeed, 20000);
   }
   </script>
   <img src="" style="height: auto; width: 20%;" id="cat">

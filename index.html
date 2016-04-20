@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 
 <head>
@@ -84,21 +83,25 @@
       }
     }
   window.onload = function() {
-    var placeKitten = document.getElementById("placekitten");
-    var image = document.getElementById("feed");
-    function updateImage() {
-        function getRandomInt(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
-        var randomNumber = getRandomInt(200, 400);
-        image.src = image.src.split("?")[0] + "?" + new Date().getTime();
-        placeKitten.src = "http://placekitten.com/" + randomNumber + "/" + randomNumber;
+    function updateFeed() 
+    {
+        var feedImage = document.getElementById("feed");
+        feedImage.src = image.src.split("?")[0] + "?" + new Date().getTime();
     }
-    updateImage();
-    setInterval(updateImage, 15000);
+    function updatecat()
+    {
+      var catImage = document.getElementById("cat");
+      catImage.src="http://thecatapi.com/api/images/get?format=src&type=gif?currentTime=" + new Date().getTime();
+    }
+    
+    updateFeed();
+    updateCat();
+    
+    setInterval(updateCat, 10000);
+    setInterval(updateFeed, 15000);
   }
   </script>
-  <img src="" style="height: auto; width: 20%;" id="placekitten">
+  <img src="" style="height: auto; width: 20%;" id="cat">
   <br>
   <h2 id="myh2">Internet Of stuff</h2>
   <h4 id="myh4">

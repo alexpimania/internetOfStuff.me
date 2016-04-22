@@ -41,6 +41,7 @@ function makeLink() {
       }
     }
     
+    checkZach();
     updateFeed();
     setInterval(updateFeed, 20000);
   }

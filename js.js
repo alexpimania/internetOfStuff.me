@@ -27,9 +27,20 @@ function makeLink() {
       catImage.src="http://thecatapi.com/api/images/get?format=src&type=gif&currentTime=" + new Date().getTime();
     }
     
-    updateFeed();
-    updateCat();
+    function checkZach()
+    {
+      var name = prompt("What is your name?");
+      if (name.nametoLowerCase().indexOf("zach") != true)
+      {
+        updateCat();
+        setInterval(updateCat, 10000);
+      }
+      else
+      {
+        alert("You must be zach so no cats here!!")
+      }
+    }
     
-    setInterval(updateCat, 10000);
+    updateFeed();
     setInterval(updateFeed, 20000);
   }

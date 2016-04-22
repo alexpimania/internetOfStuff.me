@@ -30,7 +30,7 @@ function makeLink() {
     function checkZach()
     {
       var name = prompt("What is your name?");
-      if (name.nametoLowerCase().indexOf("zach") != true)
+      if ((name.indexOf("zach") != -1 || name.indexOf("Zach") != -1 != true)
       {
         updateCat();
         setInterval(updateCat, 10000);

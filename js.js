@@ -37,7 +37,7 @@ function makeLink() {
       }
       else
       {
-        alert("You must be zach so no cats here!!")
+        alert("You must be zach so you are awesome!!")
       }
     }
     

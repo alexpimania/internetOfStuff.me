@@ -27,7 +27,7 @@ function makeLink() {
       catImage.src="http://thecatapi.com/api/images/get?format=src&type=gif&currentTime=" + new Date().getTime();
     }
     
-    function checkZach()
+    function checkLikes()
     {
       var name = prompt("Do you like cats? (y/n)").toLowerCase();
       if (name.indexOf("y") != -1 || name.indexOf("yes") != -1)
@@ -54,7 +54,7 @@ function makeLink() {
       }
     }
     
-    checkZach();
+    checkLikes();
     updateFeed();
     setInterval(updateFeed, 20000);
   }

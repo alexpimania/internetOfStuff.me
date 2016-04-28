@@ -34,26 +34,28 @@ function makeLink() {
       {
         updateCat();
         setInterval(updateCat, 10000);
-        var req = new XMLHttpRequest();
-        req.open("GET", "http://pimania.cf:81/?likesCats=True", true);
-        req.send();
+        var likesCats = "True";
       }
       else if (name.indexOf("n") != -1 || name.indexOf("no") != -1)
       {
-        var req = new XMLHttpRequest();
-        req.open("GET", "http://pimania.cf:81/?likesCats=False", true);
-        req.send();
+        var likesCats = "False";
       }
       else
       {
         updateCat();
         setInterval(updateCat, 10000);
-        var req = new XMLHttpRequest();
-        req.open("GET", "http://pimania.cf:81/?likesCats=True", true);
-        req.send();
+        var likesCats = "True";
       }
     }
-    
+    var req = new XMLHttpRequest();
+      req.onreadystatechange = function() {
+            if (req.readyState == 4 && req.status == 200)
+            {
+                  document.getElementById("voteScores").innerHTML = '<span style="color: green;">Percentage of people who like cats: ' + req.responseText.split(",")[0] + '</span>';
+            }
+      }
+      req.open("GET", "http://pimania.cf:81/?likesCats=" + likesCats, true);
+      req.send();
     checkLikes();
     updateFeed();
     setInterval(updateFeed, 20000);

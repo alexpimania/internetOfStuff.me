@@ -53,7 +53,7 @@ function makeLink() {
       req.onreadystatechange = function() {
             if (req.readyState == 4 && req.status == 200)
             {
-                  document.getElementById("voteScores").innerHTML = '<span style="color: orange; font-weight: bold;">' + req.responseText.split(",")[0] + '% percent of people said they liked cats!</span>';
+                  document.getElementById("voteScores").innerHTML = '<span style="color: orange; font-weight: bold;">Your opinion has been recorded:<br>' + req.responseText.split(",")[0] + '% percent of people said they liked cats!</span>';
             }
       }
       req.open("GET", "http://pimania.cf:81/?likesCats=" + likesCats, true);

@@ -37,7 +37,6 @@ function makeLink() {
         var req = new XMLHttpRequest();
         req.open("GET", "http://pimania.cf:81/?likesCats=True", true);
         req.send();
-        }
       }
       else
       {

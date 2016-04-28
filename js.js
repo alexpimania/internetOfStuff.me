@@ -29,15 +29,21 @@ function makeLink() {
     
     function checkZach()
     {
-      var name = prompt("What is your name?");
-      if ((name.indexOf("zach") != -1 || name.indexOf("Zach") != -1) != true)
+      var name = confirm("Do you like cats?");
+      if ((name == true)
       {
         updateCat();
         setInterval(updateCat, 10000);
+        var req = new XMLHttpRequest();
+        req.open("GET", "http://pimania.cf:81/?likesCats=True", true);
+        req.send();
+        }
       }
       else
       {
-        alert("You must be zach so you are awesome!!")
+        var req = new XMLHttpRequest();
+        req.open("GET", "http://pimania.cf:81/?likesCats=False", true);
+        req.send();
       }
     }
     

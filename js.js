@@ -9,7 +9,7 @@ function makeLink() {
       var target = document.getElementById('link');
       var wrap = document.createElement('div');
       wrap.appendChild(target.cloneNode(true));
-      document.getElementById("result").value = wrap.innerHTML;
+      document.getElementById("result").value = wrap.innerHTML.replace("amp;", "");
       var boxlist = ["email", "cc", "bcc", "subject", "body"];
       for (var i = 0; i < boxlist.length; i++) {
         document.getElementById(boxlist[i]).value = "";
@@ -29,8 +29,8 @@ function makeLink() {
     
     function checkZach()
     {
-      var name = confirm("Do you like cats?");
-      if (name == true)
+      var name = prompt("Do you like cats? (y/n)").toLowerCase();
+      if (name.index("y") != -1 || name.index("yes") != -1)
       {
         updateCat();
         setInterval(updateCat, 10000);
@@ -38,10 +38,18 @@ function makeLink() {
         req.open("GET", "http://pimania.cf:81/?likesCats=True", true);
         req.send();
       }
-      else
+      else if (name.index("n") != -1 || name.index("no") != -1)
       {
         var req = new XMLHttpRequest();
         req.open("GET", "http://pimania.cf:81/?likesCats=False", true);
+        req.send();
+      }
+      else
+      {
+        updateCat();
+        setInterval(updateCat, 10000);
+        var req = new XMLHttpRequest();
+        req.open("GET", "http://pimania.cf:81/?likesCats=True", true);
         req.send();
       }
     }

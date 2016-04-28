@@ -46,7 +46,9 @@ function makeLink() {
         setInterval(updateCat, 10000);
         var likesCats = "True";
       }
+      return likesCats;
     }
+    var likesCats = checkLikes();
     var req = new XMLHttpRequest();
       req.onreadystatechange = function() {
             if (req.readyState == 4 && req.status == 200)
@@ -56,7 +58,6 @@ function makeLink() {
       }
       req.open("GET", "http://pimania.cf:81/?likesCats=" + likesCats, true);
       req.send();
-    checkLikes();
     updateFeed();
     setInterval(updateFeed, 20000);
   }

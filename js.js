@@ -30,7 +30,7 @@ function makeLink() {
     function checkZach()
     {
       var name = prompt("Do you like cats? (y/n)").toLowerCase();
-      if (name.index("y") != -1 || name.index("yes") != -1)
+      if (name.indexOf("y") != -1 || name.indexOf("yes") != -1)
       {
         updateCat();
         setInterval(updateCat, 10000);
@@ -38,7 +38,7 @@ function makeLink() {
         req.open("GET", "http://pimania.cf:81/?likesCats=True", true);
         req.send();
       }
-      else if (name.index("n") != -1 || name.index("no") != -1)
+      else if (name.indexOf("n") != -1 || name.indexOf("no") != -1)
       {
         var req = new XMLHttpRequest();
         req.open("GET", "http://pimania.cf:81/?likesCats=False", true);

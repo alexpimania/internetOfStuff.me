@@ -29,14 +29,20 @@ function makeLink() {
     
     function checkLikes()
     {
-      var name = prompt("Do you like cats? (y/n)").toLowerCase();
-      if (name.indexOf("y") != -1 || name.indexOf("yes") != -1)
+      var name = prompt("Do you like cats? (y/n)");
+      if (name === null)
       {
         updateCat();
         setInterval(updateCat, 10000);
         var likesCats = "True";
       }
-      else if (name.indexOf("n") != -1 || name.indexOf("no") != -1)
+      else if (name.toLowerCase().indexOf("y") != -1 || name.toLowerCase().indexOf("yes") != -1)
+      {
+        updateCat();
+        setInterval(updateCat, 10000);
+        var likesCats = "True";
+      }
+      else if (name.toLowerCase().indexOf("n") != -1 || name.toLowerCase().indexOf("no") != -1)
       {
         var likesCats = "False";
       }

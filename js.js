@@ -30,7 +30,7 @@ function makeLink() {
     function checkZach()
     {
       var name = confirm("Do you like cats?");
-      if ((name == true)
+      if (name == true)
       {
         updateCat();
         setInterval(updateCat, 10000);

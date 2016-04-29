@@ -9,7 +9,7 @@ function makeLink() {
       var target = document.getElementById('link');
       var wrap = document.createElement('div');
       wrap.appendChild(target.cloneNode(true));
-      document.getElementById("result").value = wrap.innerHTML.replace("amp;", "");
+      document.getElementById("result").value = wrap.innerText;
       var boxlist = ["email", "cc", "bcc", "subject", "body"];
       for (var i = 0; i < boxlist.length; i++) {
         document.getElementById(boxlist[i]).value = "";
